@@ -9,7 +9,7 @@ const app = express();
 const PORT = Number(process.env.PORT || 3000);
 const BASE_URL = (process.env.BASE_URL || `http://localhost:${PORT}`).replace(/\/$/, '');
 const DEFAULT_CURRENCY = (process.env.CURRENCY || 'USD').toUpperCase();
-const publicDir = path.join(__dirname, '..', 'public');
+const publicDir = path.join(__dirname, 'public');
 const allowedCurrencies = new Set(['USD', 'GBP', 'EUR']);
 const stripe = process.env.STRIPE_SECRET_KEY && !process.env.STRIPE_SECRET_KEY.includes('replace_me')
   ? new Stripe(process.env.STRIPE_SECRET_KEY)
